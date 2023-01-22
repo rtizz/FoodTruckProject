@@ -6,9 +6,7 @@ import com.skilldistillery.foodtruck.entities.Foodtruck;
 
 public class FoodTruckApp {
 
-	// User will input and rate a list of food trucks, then view the average rating
-	// and the highest-rated truck
-	// DOES NOT PASS IN ID VALUE FOR FOODTRUCK
+
 	private Foodtruck[] foodtrucksArray = new Foodtruck[5];
 	private Scanner scan = new Scanner(System.in);
 
@@ -25,37 +23,8 @@ public class FoodTruckApp {
 
 
 	}
-
-	/*
-	 * 1. Take in text and assign to private vars and place those in Array 2. DO NOT
-	 * TAKE IN THE TRUCK ID. For loop potentially to add that to each new truck.
-	 * ******3. Selecting quit FOR FOOD TRUCK NAME, the input ends and continues
-	 * program****** (Switch?) 4. After quit, the user is prompted with a menu they
-	 * can choose from. (SwitchVVV)
-	 */
-	// a. List all existing food trucks.
-	// TODO Make ALL actual trucks print. NO NULL
-	//
-	// b. see the average rating for food truck - cannot be length, needs to see 2
-	// total if only 2 and 3 if only
-	// c. Display the highest-rated food truck
-	// d. Quit the program
-
-	// We want the first prompt to loop (to 5) until someone enters "quit" (While
-	// loop with a break).
-
-	// we want the second menu to persist until they select quit and end the
-	// program.
-
-//	1. Take in a single object's variables and assign them to an array. 
-	//
-	// for loop takes in parameters
-
-//Instantiate food truck array here
-	// loopVVV
-	// TODO Prompt user to input the name, foodtype, and rating for UP TO 5 food
-	// trucks.
-
+	
+	
 	// makes new inputs to assign to Foodtruck ctor.
 	public void populateFTArray() {
 
@@ -72,8 +41,12 @@ public class FoodTruckApp {
 			} else {
 				System.out.println("Please enter the food truck cuisine");
 				foodType = scan.nextLine();
-				System.out.println("Please enter a rating from 0(Worst) - 10 (Amazing)");
+				System.out.println("Please enter a star rating from 1 - 5 ");
 				rating = scan.nextInt();
+				if (rating > 5 || rating < 1) {
+					System.err.println("Invalid Entry: Please select from 1 - 5");
+					rating = scan.nextInt();
+				}
 				scan.nextLine();
 				foodtrucksArray[truckLoops] = new Foodtruck(truckName, foodType, rating);
 			}
@@ -104,8 +77,8 @@ public class FoodTruckApp {
 //			menuList();
 			break;
 		case 2:
-			int counter = 0;
-			int total = 0;
+			double counter = 0;
+			double total = 0;
 			for (int numbOfTrucks = 0; numbOfTrucks < foodtrucksArray.length; numbOfTrucks ++) {
 				if (foodtrucksArray[numbOfTrucks] != null) {
 					total += foodtrucksArray[numbOfTrucks].getRating();
@@ -113,30 +86,47 @@ public class FoodTruckApp {
 				} 
 				
 			}
-			double average = total / counter;
-			System.out.println("The average foodtruck rating was: " + average);
+			double avg = total / counter;
+			//avg = Math.round(avg*) /2;
+			System.out.println("The average foodtruck rating was: " + avg);
 			break;
 		case 3:
-//			System.out.println("The highest rated foodtruck was: " /* + method to display highest */);
-//			String highestRated ;
-//			int highestRatedNum = 0;
-//			int newNum = 0;
-//			for(int numbOfTrucks = 0; numbOfTrucks < foodtrucksArray.length; numbOfTrucks ++) {
-//				if (foodtrucksArray[numbOfTrucks] != null) {
-//					if (foodtrucksArray[numbOfTrucks].getRating() > highestRatedNum) {
-//						highestRatedNum = foodtrucksArray[numbOfTrucks].getRating();
-//						highestRated = foodtrucksArray.
-//						System.out.println(highestRated);
-//					}
-//				}
-//			}
+			String winnerName = null;
+			int winnerId = 0; 
+			String winnerFood = null;
+			int winnerRating = 0;
+			int highestRatedNum = foodtrucksArray[0].getRating();
+			for(int numbOfTrucks = 0; numbOfTrucks < foodtrucksArray.length; numbOfTrucks ++) {
+				if (foodtrucksArray[numbOfTrucks] != null) {
+					if (foodtrucksArray[numbOfTrucks].getRating() > highestRatedNum) {
+						//highestRatedNum = foodtrucksArray[numbOfTrucks].getRating();
+						
+						winnerName = foodtrucksArray[numbOfTrucks].getName();
+						winnerId = foodtrucksArray[numbOfTrucks].getId();
+						winnerFood = foodtrucksArray[numbOfTrucks].getFoodType();
+						winnerRating = foodtrucksArray[numbOfTrucks].getRating();
+						
+					} else if (foodtrucksArray[numbOfTrucks].getRating() == highestRatedNum) {
+						winnerName = foodtrucksArray[numbOfTrucks].getName();
+						winnerId = foodtrucksArray[numbOfTrucks].getId();
+						winnerFood = foodtrucksArray[numbOfTrucks].getFoodType();
+						winnerRating = foodtrucksArray[numbOfTrucks].getRating();
+					}
+				}
+			} 
+			//System.out.println(highestRatedNum);
+			System.out.println(" The winning food truck was, " + winnerName + ", VendorID: " + winnerId +  ", Food-Type: " + winnerFood + ", Rating: " + winnerRating + "]");
 			break;
 		case 4:
-			System.out.println("Exiting");
+			System.out.println("Exiting Program");
 			// isTrue = false;
+			scan.close(); 
 			return false;
 		default:
+			if (numSelect != 1 || numSelect != 2 || numSelect != 3 || numSelect != 4) {
 			System.err.println("Invalid Entry: Please select 1-4");
+			numSelect = scan.nextInt();
+			}
 			break;
 
 		}
