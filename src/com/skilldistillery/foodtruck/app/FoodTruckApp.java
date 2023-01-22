@@ -88,7 +88,7 @@ public class FoodTruckApp {
 			}
 			double avg = total / counter;
 			//avg = Math.round(avg*) /2;
-			System.out.println("The average foodtruck rating was: " + avg);
+			System.out.println("The average foodtruck rating was: " + avg + " stars.");
 			break;
 		case 3:
 			String winnerName = null;
