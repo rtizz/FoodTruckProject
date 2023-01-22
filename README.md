@@ -9,19 +9,19 @@ The overall purpose of this program is to allow the user to input up to 5 Food T
 1. Enter the name of a respective food truck, the food type, and a rating from 1 - 5 stars.
 2. The prompts will continue until five food trucks have been entered 
    OR
-   Enter "quit" at the food truck name prompt (after entering at least one food truck)to jump to main menu. 
+   Enter "quit" at the food truck name prompt (after entering at least one food truck)to jump to main menu. <br>
    ***NOTE*** If "quit" is entered on first prompt. No food trucks will be entered.
 3. Once at the main menu, the user will be prompted with 4 options:
 
 EXPECTED OUTCOMES <br>
-    1. List all food trucks. - Lists out all food trucks entered with all accompanying data plus an automatically assigned Vendor ID.
-    2. See average rating of food trucks. - Compiles all respective ratings and produces the average of all the food truck ratings.
-    3. Display highest-rated food truck. - Lists out the winning food truck will all respective data. If a tie, the program will print both highest rated.
-    ***NOTE*** If more than one values share a high score, the program will default to the newest.
-    4. Quit the program. - Self explanatory
+    1. List all food trucks. - Lists out all food trucks entered with all accompanying data plus an automatically assigned Vendor ID.<br>
+    2. See average rating of food trucks. - Compiles all respective ratings and produces the average of all the food truck ratings. <br>
+    3. Display highest-rated food truck. - Lists out the winning food truck will all respective data. If a tie, the program will print both highest rated.<br>
+    ***NOTE*** If more than one values share a high score, the program will default to the newest.<br>
+    4. Quit the program. - Self explanatory<br>
 
-# Code breakdown:
-Additional (detailed) comments are left along side the code as well
+# Code breakdown:<br>
+Additional (detailed) comments are left along side the code as well<br>
 ## Foodtruck.java ##
 
 Lines->Description <br> 
