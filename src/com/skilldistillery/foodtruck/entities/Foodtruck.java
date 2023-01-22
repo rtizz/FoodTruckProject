@@ -18,8 +18,6 @@ public class Foodtruck {
 		this.name = truckName;
 		this.foodType = foodType;
 		this.rating = rating;
-
-		
 	}
 
 	
