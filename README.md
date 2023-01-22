@@ -23,33 +23,33 @@ The overall purpose of this program is to allow the user to input up to 5 Food T
 Additional (detailed) comments are left along side the code as well
 ## Foodtruck.java ##
 
-Lines:	Description
-4-8: 	Respective varable declaration and assignment(for one).
-10-13 	NoArg Ctor (not utilized in code).
-15-21	Main Foodtruck Ctor taking in the key parameters.
+Lines:\t	Description <br> 
+4-8: 	Respective varable declaration and assignment(for one).<br>
+10-13 NoArg Ctor (not utilized in code).<br>
+15-21	Main Foodtruck Ctor taking in the key parameters. <br>
 		Utilization of auto - assigned venderID
-24-54 	Respective getters and setters for invoking private variables.
-57-60	To String
+24-54 Respective getters and setters for invoking private variables.<br>
+57-60	To String<br>
 
 
 ## FoodTruckApp.java##
 
-Lines:	Description
-11-12	Initial instantiation of FoodTruck array and scanner objects.
-14-22	Main method
-		15: Instatiating FoodtruckApp object to be used in methods below.
-		16: Declaring and assigning a value to while loop boolean
-		18-21: Primary two methods being utilized, one being looped.
-26-50 	populateFTArry method 
-		1. Prompts users
-		2. Assigns input to variable
-		   Breaks for loop if criteria is met to initiate while loop
-		3. Sets those variables as parameters/arguments in Foodtruck Ctor
-53-124	menuList method - returning a boolean to kill the while loop if criteria met.
-		Once user enters "quit" after entering 1 OR enter in 5 food trucks, populatFTArray method ends and menuList is initiated
-		54-59: 4 option main menu with a scanner input to assign to switch statment following.
-		61-122: Switch statement outlining the criteria for selecting items 1-4
-				Case 4: Exiting the menu and ending the program sends the false boolean value out to the main method to kill the 
+*Lines->Description* <br>
+11-12	Initial instantiation of FoodTruck array and scanner objects.<br>
+14-22	Main method<br>
+		15: Instatiating FoodtruckApp object to be used in methods below.<br>
+		16: Declaring and assigning a value to while loop boolean<br>
+		18-21: Primary two methods being utilized, one being looped.<br>
+26-50 populateFTArry method <br>
+		1. Prompts users <br>
+		2. Assigns input to variable <br>
+		   Breaks for loop if criteria is met to initiate while loop<br>
+		3. Sets those variables as parameters/arguments in Foodtruck Ctor<br>
+53-124menuList method - returning a boolean to kill the while loop if criteria met.<br>
+		Once user enters "quit" after entering 1 OR enter in 5 food trucks, populatFTArray method ends and menuList is initiated<br>
+		54-59: 4 option main menu with a scanner input to assign to switch statment following.<br>
+		61-122: Switch statement outlining the criteria for selecting items 1-4<br>
+		>>>>>>Case 4: Exiting the menu and ending the program sends the false boolean value out to the main method to kill the 
 				while loop.
 
 
